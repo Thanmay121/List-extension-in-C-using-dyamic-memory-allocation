@@ -36,31 +36,3 @@ void free_list(list *l1) {
     free((*l1).data);
     free(l1);
 }
-int main() {
-    printf("enter list size");
-    int n,choice,temp;
-    scanf("%d",&n);
-    list *mylist = newlist(n);
-    printf("enter list elements");
-    for(int k=0;k<n;k++)
-    {
-        scanf("%d",&(*mylist).data[k]);
-    }
-
-    (*mylist).size = n;
-    printf("enter 1 to change current list size");
-    scanf("%d",&choice);
-    if(choice == 1)
-    {
-    printf("enter number to be appended");
-    scanf("%d",&temp);
-    append(mylist,temp);
-    for(int k=0;k<(*mylist).size;k++)
-    {
-        printf(" ");
-        printf("%d",(*mylist).data[k]);
-    }
-    }
-    free_list(mylist);
-    return 0;
-}
